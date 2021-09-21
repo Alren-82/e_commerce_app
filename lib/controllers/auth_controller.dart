@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 import 'package:e_commerce_app_firebase/constants/firebase.dart';
 import 'package:e_commerce_app_firebase/models/user_model.dart';
+import 'package:e_commerce_app_firebase/helpers/loading_helper.dart';
 import 'package:e_commerce_app_firebase/screens/authentication/authentication_screen.dart';
 import 'package:e_commerce_app_firebase/screens/home/home_screen.dart';
 
@@ -42,8 +43,14 @@ class AuthController extends GetxController {
 
   void signIn() async {
     try {
-      await auth.signInWithEmailAndPassword(
-          email: email.text.trim(), password: password.text.trim());
+      showLoading();
+      await auth
+          .signInWithEmailAndPassword(
+              email: email.text.trim(), password: password.text.trim())
+          .then((value) {
+        print(value);
+        Get.snackbar("Success", "You have successfully signed in.");
+      });
     } catch (e) {
       debugPrint(e.toString());
       Get.snackbar(
@@ -53,6 +60,7 @@ class AuthController extends GetxController {
 
   void signUp() async {
     try {
+      showLoading();
       await auth
           .createUserWithEmailAndPassword(
               email: email.text.trim(), password: password.text.trim())
@@ -65,8 +73,10 @@ class AuthController extends GetxController {
       });
     } catch (e) {
       debugPrint(e.toString());
+      dismissLoadingWidget();
       Get.snackbar(
           "Sign Up Failed", "Please enter a valid email and/or password.");
+      _clearTextEditingControllers();
     }
   }
 
@@ -86,6 +96,7 @@ class AuthController extends GetxController {
   }
 
   void signOut() async {
+    _clearTextEditingControllers();
     await auth.signOut();
   }
 
