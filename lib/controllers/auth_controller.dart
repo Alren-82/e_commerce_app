@@ -61,6 +61,7 @@ class AuthController extends GetxController {
         String _userId = result.user!.uid;
         _addUserToFirestore(_userId);
         _clearTextEditingControllers();
+        Get.snackbar("Success", "Your account has been created successfully.");
       });
     } catch (e) {
       debugPrint(e.toString());

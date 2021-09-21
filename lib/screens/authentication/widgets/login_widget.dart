@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 import 'package:e_commerce_app_firebase/controllers/auth_controller.dart';
 import 'package:e_commerce_app_firebase/widgets/custom_button_widget.dart';
 
 class LoginWidget extends StatelessWidget {
-  final AuthController authController = AuthController();
+  final AuthController _authController = Get.find();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -33,7 +35,7 @@ class LoginWidget extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                   child: TextField(
-                    controller: authController.email,
+                    controller: _authController.email,
                     decoration: InputDecoration(
                         icon: Icon(Icons.email_outlined),
                         fillColor: Colors.white,
@@ -58,7 +60,7 @@ class LoginWidget extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                   child: TextField(
-                    controller: authController.password,
+                    controller: _authController.password,
                     decoration: InputDecoration(
                         icon: Icon(Icons.lock),
                         fillColor: Colors.white,
@@ -74,7 +76,7 @@ class LoginWidget extends StatelessWidget {
             child: CustomButton(
                 text: "Login",
                 onTap: () {
-                  authController.signIn();
+                  _authController.signIn();
                 }),
           )
         ],
