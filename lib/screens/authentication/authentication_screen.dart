@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import 'package:e_commerce_app_firebase/controllers/app_controller.dart';
@@ -18,9 +19,9 @@ class AuthenticationScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(height: MediaQuery.of(context).size.width / 3),
-                Image.network(
-                  "https://images.pexels.com/photos/1337386/pexels-photo-1337386.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-                  width: 200,
+                SvgPicture.asset(
+                  _appController.changeDIsplayedImage(),
+                  width: _appController.changeDisplayedImageSize(),
                 ),
                 SizedBox(height: MediaQuery.of(context).size.width / 5),
                 Visibility(
@@ -36,7 +37,7 @@ class AuthenticationScreen extends StatelessWidget {
                   visible: _appController.isLoginWidgetDisplayed.value,
                   child: BottomTextWidget(
                     onTap: () {
-                      _appController.changeDIsplayedAuthWidget();
+                      _appController.changeDisplayedAuthWidget();
                     },
                     text1: "Don\'t have an account?",
                     text2: "Create account!",
@@ -46,10 +47,10 @@ class AuthenticationScreen extends StatelessWidget {
                   visible: !_appController.isLoginWidgetDisplayed.value,
                   child: BottomTextWidget(
                     onTap: () {
-                      _appController.changeDIsplayedAuthWidget();
+                      _appController.changeDisplayedAuthWidget();
                     },
                     text1: "Already have an account?",
-                    text2: "Sign in!!",
+                    text2: "Sign in!",
                   ),
                 ),
               ],

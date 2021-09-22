@@ -53,6 +53,7 @@ class AuthController extends GetxController {
       });
     } catch (e) {
       debugPrint(e.toString());
+      dismissLoadingWidget();
       Get.snackbar(
           "Sign In Failed", "Invalid email and/or password. Please try again.");
     }
@@ -76,7 +77,6 @@ class AuthController extends GetxController {
       dismissLoadingWidget();
       Get.snackbar(
           "Sign Up Failed", "Please enter a valid email and/or password.");
-      _clearTextEditingControllers();
     }
   }
 
