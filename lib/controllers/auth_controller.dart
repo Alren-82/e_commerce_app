@@ -1,3 +1,4 @@
+import 'package:connectivity/connectivity.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,6 +15,8 @@ class AuthController extends GetxController {
   RxBool isLoggedIn = false.obs;
   String usersCollection = "users";
   Rx<UserModel?> userModel = UserModel().obs;
+  String noInternetErrorTitle = "Sign In Failed";
+  String noInternetErrorMessage = "Please connect to the internet";
 
   TextEditingController name = TextEditingController();
   TextEditingController email = TextEditingController();
@@ -54,8 +57,17 @@ class AuthController extends GetxController {
     } catch (e) {
       debugPrint(e.toString());
       dismissLoadingWidget();
-      Get.snackbar(
-          "Sign In Failed", "Invalid email and/or password. Please try again.");
+
+      // checck for internet connectivity
+      var connectivityResult = await (Connectivity().checkConnectivity());
+      if (connectivityResult != ConnectivityResult.mobile) {
+        Get.snackbar(noInternetErrorTitle, noInternetErrorMessage);
+      } else if (connectivityResult != ConnectivityResult.wifi) {
+        Get.snackbar(noInternetErrorTitle, noInternetErrorMessage);
+      } else {
+        Get.snackbar("Sign In Failed",
+            "Invalid email and/or password. Please try again.");
+      }
     }
   }
 
@@ -75,8 +87,15 @@ class AuthController extends GetxController {
     } catch (e) {
       debugPrint(e.toString());
       dismissLoadingWidget();
-      Get.snackbar(
-          "Sign Up Failed", "Please enter a valid email and/or password.");
+      var connectivityResult = await (Connectivity().checkConnectivity());
+      if (connectivityResult != ConnectivityResult.mobile) {
+        Get.snackbar(noInternetErrorTitle, noInternetErrorMessage);
+      } else if (connectivityResult != ConnectivityResult.wifi) {
+        Get.snackbar(noInternetErrorTitle, noInternetErrorMessage);
+      } else {
+        Get.snackbar(
+            "Sign Up Failed", "Please enter a valid email and/or password.");
+      }
     }
   }
 
