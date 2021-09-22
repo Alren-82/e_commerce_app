@@ -52,6 +52,13 @@ class HomeScreen extends StatelessWidget {
                 },
               ),
               ListTile(
+                leading: Icon(Icons.shopping_cart),
+                title: CustomText(
+                  text: "My Cart",
+                ),
+                onTap: () async {},
+              ),
+              ListTile(
                 onTap: () {
                   authController.signOut();
                 },
