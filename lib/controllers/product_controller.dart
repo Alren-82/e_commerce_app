@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import 'package:e_commerce_app_firebase/constants/firebase.dart';
+import 'package:e_commerce_app_firebase/constants/firebase_constants.dart';
 import 'package:e_commerce_app_firebase/models/products_model.dart';
 
 class ProductController extends GetxController {

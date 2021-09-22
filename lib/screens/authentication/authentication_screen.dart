@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-import 'package:e_commerce_app_firebase/constants/controllers.dart';
+import 'package:e_commerce_app_firebase/constants/controllers_constants.dart';
 import 'package:e_commerce_app_firebase/screens/authentication/widgets/bottom_text_widget.dart';
 import 'package:e_commerce_app_firebase/screens/authentication/widgets/login_widget.dart';
 import 'package:e_commerce_app_firebase/screens/authentication/widgets/register_widget.dart';

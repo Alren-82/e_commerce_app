@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'constants/firebase.dart';
+import 'constants/firebase_constants.dart';
 import 'controllers/app_controller.dart';
 import 'controllers/auth_controller.dart';
+import 'package:e_commerce_app_firebase/controllers/cart_controller.dart';
 import 'package:e_commerce_app_firebase/controllers/product_controller.dart';
 
 void main() async {
@@ -13,6 +14,7 @@ void main() async {
     Get.put(AppController());
     Get.put(AuthController());
     Get.put(ProductController());
+    Get.put(CartController());
   });
   runApp(MyApp());
 }

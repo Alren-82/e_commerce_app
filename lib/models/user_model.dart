@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+import 'package:e_commerce_app_firebase/constants/app_constants.dart';
 import 'package:e_commerce_app_firebase/models/cart_item_model.dart';
 
 class UserModel {
@@ -25,6 +26,7 @@ class UserModel {
   List<CartItemModel> _convertCartItems(List cartFomDb) {
     List<CartItemModel> _result = [];
     if (cartFomDb.length > 0) {
+      logger.i(cartFomDb);
       cartFomDb.forEach((element) {
         _result.add(CartItemModel.fromMap(element));
       });

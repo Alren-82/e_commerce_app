@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'package:e_commerce_app_firebase/constants/controllers.dart';
+import 'package:e_commerce_app_firebase/constants/controllers_constants.dart';
 import 'package:e_commerce_app_firebase/screens/home/widget/products_widget.dart';
 import 'package:e_commerce_app_firebase/widgets/custom_text_widget.dart';
 

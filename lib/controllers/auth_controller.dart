@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'package:e_commerce_app_firebase/constants/firebase.dart';
+import 'package:e_commerce_app_firebase/constants/firebase_constants.dart';
 import 'package:e_commerce_app_firebase/models/user_model.dart';
 import 'package:e_commerce_app_firebase/helpers/loading_helper.dart';
 import 'package:e_commerce_app_firebase/screens/authentication/authentication_screen.dart';
