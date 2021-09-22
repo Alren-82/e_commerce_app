@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
-import 'package:e_commerce_app_firebase/controllers/auth_controller.dart';
+import 'package:e_commerce_app_firebase/constants/controllers.dart';
 import 'package:e_commerce_app_firebase/widgets/custom_button_widget.dart';
 
 class RegisterWidget extends StatelessWidget {
-  final AuthController _authController = Get.find();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -35,7 +33,7 @@ class RegisterWidget extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                   child: TextField(
-                    controller: _authController.name,
+                    controller: authController.name,
                     decoration: InputDecoration(
                         icon: Icon(Icons.person),
                         fillColor: Colors.white,
@@ -60,7 +58,7 @@ class RegisterWidget extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                   child: TextField(
-                    controller: _authController.email,
+                    controller: authController.email,
                     decoration: InputDecoration(
                         icon: Icon(Icons.email_outlined),
                         fillColor: Colors.white,
@@ -85,7 +83,7 @@ class RegisterWidget extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                   child: TextField(
-                    controller: _authController.password,
+                    controller: authController.password,
                     decoration: InputDecoration(
                         icon: Icon(Icons.lock),
                         fillColor: Colors.white,
@@ -101,7 +99,7 @@ class RegisterWidget extends StatelessWidget {
             child: CustomButton(
                 text: "Register",
                 onTap: () {
-                  _authController.signUp();
+                  authController.signUp();
                 }),
           )
         ],
