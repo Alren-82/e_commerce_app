@@ -1,3 +1,4 @@
+import 'package:e_commerce_app_firebase/constants/controllers_constants.dart';
 import 'package:flutter/material.dart';
 
 import 'package:e_commerce_app_firebase/models/products_model.dart';
@@ -59,7 +60,7 @@ class SingleProductWidget extends StatelessWidget {
               IconButton(
                   icon: Icon(Icons.add_shopping_cart),
                   onPressed: () {
-                    // cartController.addProductToCart(product);
+                    cartController.addProductToCart(product);
                   })
             ],
           ),

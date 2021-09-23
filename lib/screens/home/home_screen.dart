@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 import 'package:e_commerce_app_firebase/constants/controllers_constants.dart';
 import 'package:e_commerce_app_firebase/screens/home/widget/products_widget.dart';
+import 'package:e_commerce_app_firebase/screens/home/widget/shopping_cart_widget.dart';
 import 'package:e_commerce_app_firebase/widgets/custom_text_widget.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -21,13 +23,13 @@ class HomeScreen extends StatelessWidget {
             IconButton(
                 icon: Icon(Icons.shopping_cart),
                 onPressed: () {
-                  // showBarModalBottomSheet(
-                  //   context: context,
-                  //   builder: (context) => Container(
-                  //     color: Colors.white,
-                  //     child: ShoppingCartWidget(),
-                  //   ),
-                  // );
+                  showBarModalBottomSheet(
+                    context: context,
+                    builder: (context) => Container(
+                      color: Colors.white,
+                      child: ShoppingCartWidget(),
+                    ),
+                  );
                 })
           ],
           elevation: 0,
@@ -54,7 +56,7 @@ class HomeScreen extends StatelessWidget {
               ListTile(
                 leading: Icon(Icons.shopping_cart),
                 title: CustomText(
-                  text: "My Cart",
+                  text: "My Account",
                 ),
                 onTap: () async {},
               ),
