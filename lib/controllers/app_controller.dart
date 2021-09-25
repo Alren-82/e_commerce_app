@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:e_commerce_app_firebase/constants/assets_path.dart';
 
 class AppController extends GetxController {
   static AppController instance = Get.find();
@@ -9,9 +10,7 @@ class AppController extends GetxController {
   }
 
   String changeDIsplayedImage() {
-    String image = isLoginWidgetDisplayed.value
-        ? "assets/images/login.svg"
-        : "assets/images/register.svg";
+    String image = isLoginWidgetDisplayed.value ? login : register;
     return image;
   }
 

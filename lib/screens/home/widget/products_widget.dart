@@ -12,7 +12,7 @@ class ProductsWidget extends StatelessWidget {
         crossAxisCount: 2,
         childAspectRatio: .63,
         padding: const EdgeInsets.all(10),
-        mainAxisSpacing: 4.0,
+        mainAxisSpacing: 5.0,
         crossAxisSpacing: 10,
         children: productController.products.map((ProductModel product) {
           return SingleProductWidget(

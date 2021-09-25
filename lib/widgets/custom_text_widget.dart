@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomText extends StatelessWidget {
-  final String text;
+  final String? text;
   final double? size;
   final Color? color;
   final FontWeight? weight;
@@ -13,7 +13,7 @@ class CustomText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      text,
+      text ?? "Please enter a text",
       style: TextStyle(
           fontSize: size ?? 16,
           color: color ?? Colors.black,

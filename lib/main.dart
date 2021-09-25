@@ -1,3 +1,4 @@
+import 'package:e_commerce_app_firebase/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -5,6 +6,7 @@ import 'constants/firebase_constants.dart';
 import 'controllers/app_controller.dart';
 import 'controllers/auth_controller.dart';
 import 'package:e_commerce_app_firebase/controllers/cart_controller.dart';
+import 'package:e_commerce_app_firebase/controllers/payments_controller.dart';
 import 'package:e_commerce_app_firebase/controllers/product_controller.dart';
 
 void main() async {
@@ -15,6 +17,7 @@ void main() async {
     Get.put(AuthController());
     Get.put(ProductController());
     Get.put(CartController());
+    Get.put(PaymentsController());
   });
   runApp(MyApp());
 }
@@ -27,12 +30,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Hello World"),
-          centerTitle: true,
-        ),
-      ),
+      home: SplashScreen(),
     );
   }
 }

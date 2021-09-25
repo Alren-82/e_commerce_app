@@ -45,7 +45,7 @@ class ShoppingCartWidget extends StatelessWidget {
                       text:
                           "Pay (\$${cartController.totalCartPrice.value.toStringAsFixed(2)})",
                       onTap: () {
-                        // paymentsController.createPaymentMethod();
+                        paymentsController.createPaymentMethod();
                       }),
                 )))
       ],

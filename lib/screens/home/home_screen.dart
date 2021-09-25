@@ -45,20 +45,27 @@ class HomeScreen extends StatelessWidget {
                   accountEmail:
                       Text(authController.userModel.value!.email ?? ""))),
               ListTile(
-                leading: Icon(Icons.book),
-                title: CustomText(
-                  text: "Payments History",
-                ),
-                onTap: () async {
-                  //  paymentsController.getPaymentHistory();
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.shopping_cart),
+                leading: Icon(Icons.person),
                 title: CustomText(
                   text: "My Account",
                 ),
                 onTap: () async {},
+              ),
+              ListTile(
+                leading: Icon(Icons.shopping_bag_rounded),
+                title: CustomText(
+                  text: "My Orders",
+                ),
+                onTap: () async {},
+              ),
+              ListTile(
+                leading: Icon(Icons.payment_rounded),
+                title: CustomText(
+                  text: "My Payments",
+                ),
+                onTap: () async {
+                  paymentsController.getPaymentHistory();
+                },
               ),
               ListTile(
                 onTap: () {
